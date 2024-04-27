@@ -6,13 +6,25 @@ from flask_login import login_user, logout_user, login_required
 from flask_bootstrap import Bootstrap
 from werkzeug.security import generate_password_hash
 from flask_babel import Babel
+import secrets
 
 
 import json
 
 app = Flask(__name__)
+
+
+secret_key = secrets.token_hex(32)
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///quiz.db'
-app.config['SECRET_KEY'] = '5f89fa56ea3bf3e8385e14b600c4e4a7f557c4418c707eecbd423a3d8921dcf0'
+app.config['SECRET_KEY'] = secret_key
+
+
+
+# Génération de la clé secrète hexadécimale
+
+# Affectation de la clé secrète à la configuration de l'application
+
 
 
 
