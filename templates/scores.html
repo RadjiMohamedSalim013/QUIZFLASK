@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tableau des Scores</title>
+</head>
+<body>
+    <h1>Tableau des Scores</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Utilisateur</th>
+                <th>Score</th>
+                <th>Feedback</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.score }}</td>
+                <td>
+                    {% for question_id, status in feedback[user.username].items() %}
+                        Question {{ question_id }}: {{ status }}
+                        {% endfor %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+    </html>        

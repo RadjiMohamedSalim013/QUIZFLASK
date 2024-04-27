@@ -1,0 +1,19 @@
+[
+    {
+        "question_text": "Quelle est la capitale de la France?",
+        "option_1": "Londres",
+        "option_2": "Berlin",
+        "option_3": "Paris",
+        "option_4": "Madrid",
+        "correct_option": 3
+    },
+    {
+        "question_text": "Quel est l'animal national de l'Australie?",
+        "option_1": "Koala",
+        "option_2": "Kangourou",
+        "option_3": "Wombat",
+        "option_4": "Emeu",
+        "correct_option": 2
+    }
+    
+]

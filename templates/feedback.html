@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}
+    feedback
+{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/note.css') }}">
+{% endblock %}
+
+
+{% block content %}
+
+
+<h1>Feedback</h1>
+
+<p>Votre score est {{ score }} / {{ feedback|length }}</p>
+
+<h2>Feedback pour chaque question :</h2>
+<ul>
+    {% for question_id, fb in feedback.items() %}
+    <li>Question {{ question_id }} : {{ fb }}</li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('index') }}">Retourner à l'accueil</a>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

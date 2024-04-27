@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Liens vers Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/note.css') }}">
+
+</head>
+<body>
+
+    <!-- En-tête -->
+    <nav>
+        <div class="container">
+            <a href="/">Système de Quiz</a>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div>
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+        <div >
+            <span >© 2024 Système de Quiz</span>
+        </div>
+    </footer>
+
+
+</body>
+</html>

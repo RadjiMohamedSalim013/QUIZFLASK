@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Système de Quiz{% endblock %}
+
+{% block css %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<div class="container mt-5">
+    <h1 >Système de Quiz</h1>
+
+    <form action="/submit" method="post">
+        <div class="mb-3">
+            <label for="username" >Nom d'utilisateur :</label>
+            <input type="text" name="username" required>
+
+
+        </div>
+        
+        {% for question in questions %}
+        <div class="mb-3">
+            <p>{{ question.question_text }}</p>
+            <div >
+                <input  type="radio" name="{{ question.id }}" value="1">
+                <label >{{ question.option_1 }}</label>
+            </div>
+            <div >
+                <input  type="radio" name="{{ question.id }}" value="2">
+                <label >{{ question.option_2 }}</label>
+            </div>
+            <div >
+                <input  type="radio" name="{{ question.id }}" value="3">
+                <label >{{ question.option_3 }}</label>
+            </div>
+            <div >
+                <input  type="radio" name="{{ question.id }}" value="4">
+                <label >{{ question.option_4 }}</label>
+            </div>
+        </div>
+        {% endfor %}
+
+        <button type="submit">Soumettre</button>
+    </form>
+</div>
+{% endblock %}

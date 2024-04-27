@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modifier une question</title>
+</head>
+<body>
+    <h1>Modifier une question</h1>
+
+    <form action="/admin/edit_question/{{ question.id }}" method="post">
+        <label for="question_text">Question :</label>
+        <textarea name="question_text" required>{{ question.question_text }}</textarea>
+
+        <label for="option_1">Option 1 :</label>
+        <input type="text" name="option_1" value="{{ question.option_1 }}" required>
+
+        <label for="option_2">Option 2 :</label>
+        <input type="text" name="option_2" value="{{ question.option_2 }}" required>
+
+        <label for="option_3">Option 3 :</label>
+        <input type="text" name="option_3" value="{{ question.option_3 }}" required>
+
+        <label for="option_4">Option 4 :</label>
+        <input type="text" name="option_4" value="{{ question.option_4 }}" required>
+
+        <label for="correct_option">Option correcte :</label>
+        <select name="correct_option" required>
+            <option value="1" {% if question.correct_option == 1 %}selected{% endif %}>Option 1</option>
+            <option value="2" {% if question.correct_option == 2 %}selected{% endif %}>Option 2</option>
+            <option value="3" {% if question.correct_option == 3 %}selected{% endif %}>Option 3</option>
+            <option value="4" {% if question.correct_option == 4 %}selected{% endif %}>Option 4</option>
+        </select>
+
+        <input type="submit" value="Modifier">
+    </form>
+</body>
+</html>

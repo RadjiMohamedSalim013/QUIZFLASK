@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+    add question
+{% endblock %}
+
+{% block content %}
+
+
+
+
+
+
+<h1>Ajouter une question</h1>
+
+<form action="/admin/add_question" method="post">
+    <label for="question_text">Question :</label>
+    <textarea name="question_text" required></textarea>
+
+    <label for="option_1">Option 1 :</label>
+    <input type="text" name="option_1" required>
+
+    <label for="option_2">Option 2 :</label>
+    <input type="text" name="option_2" required>
+
+    <label for="option_3">Option 3 :</label>
+    <input type="text" name="option_3" required>
+
+    <label for="option_4">Option 4 :</label>
+    <input type="text" name="option_4" required>
+
+    <label for="correct_option">Option correcte :</label>
+    <select name="correct_option" required>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="4">Option 4</option>
+    </select>
+
+    <input type="submit" value="Ajouter">
+</form>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
